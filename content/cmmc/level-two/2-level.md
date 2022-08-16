@@ -1,5 +1,4 @@
-# CMMC Level 2
-
+# ** Introduction to CMMC Level 2 **
 ### Visit [ jclass.solutions](http://www.jclass.solutions/)
 
 We previously reported on Cybersecurity Maturity Model Certification (CMMC) level 1 as the foundation for a sound security Stance. Level 2 can most accurately be described as a bridge to level 3. 

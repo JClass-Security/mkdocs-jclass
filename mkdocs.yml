@@ -1,4 +1,4 @@
-site_name: Jclass Solutions
+site_name: J-Class Solutions
 
 nav:
   - Introduction: index.md
@@ -34,22 +34,6 @@ nav:
       - Linux Listener: App-integrators/linux.md
       - Gsuite Listener: App-integrators/gsuite.md
 
-
-
-  # - J-Class CMMC Accessor App: 
-  #     - Introduction: Accessor-app/introduction.md
-  #     - Overview: Accessor-app/overview.md
-  #     - Working Mechanism: Accessor-app/working.md
-  #     - Helpful Links: Accessor-app/links.md
-
-  # - J-Class CMMC App Integrators:
-  #     - Fortinet Listener:
-  #     - Windows Listener:
-  #     - Linux Listener:
-  #     - Gsuite Listener:
-
-
-
 theme:
   name: material
   custom_dir: overrides
@@ -62,3 +46,22 @@ extra_css:
   - style/custom.css
 docs_dir: content
 site_dir: docs
+copyright: "Copyright &copy; 2022 J-class Solutions"
+# plugins:
+#   - social
+# extra:
+#   social:
+#     - icon: "fontawesome/brands/twitter"
+#       link: "https://twitter.com/"
+#     - icon: "fontawesome/brands/linkedin"
+#       link: "https://www.linkedin.com/company/jclass"
+#     - icon: "fontawesome/brands/facebook"
+#       link: "https://facebook.com/jclass"
+#     - icon: "fontawesome/brands/instagram"
+#       link: "https://www.instagram.com/jclass/"
+markdown_extensions:
+  - toc:
+      permalink: true
+
+
+

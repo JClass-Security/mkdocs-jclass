@@ -1,0 +1,64 @@
+site_name: Jclass Solutions
+
+nav:
+  - Introduction: index.md
+  - CMMC Levels: 
+      - CMMC Level 1: cmmc-level-one/level-one.md
+      - CMMC Level 2:
+          - Introduction to Level 2: cmmc/level-two/2-level.md
+          - Access Control: cmmc/level-two/access.md
+          - Audit and Accountability: cmmc/level-two/audit.md
+          - Awarenesss and Control: cmmc/level-two/awareness.md
+          - Configuration Management: cmmc/level-two/configuration.md
+          - Identity and Authentication: cmmc/level-two/identity.md
+          - Incident Response: cmmc/level-two/incident.md
+          - Maintenance: cmmc/level-two/maintenance.md
+          - Media Protection: cmmc/level-two/media.md
+          - Personnel Security: cmmc/level-two/personnel.md
+          - Physical Protection: cmmc/level-two/physical.md
+          - Risk Assessment: cmmc/level-two/risk.md
+          - Security Assessment: cmmc/level-two/security.md
+          - System and Communication Protection: cmmc/level-two/communication.md
+          - System and Information Integrity: cmmc/level-two/information.md
+      - CMMC Level 3: cmmc-level-three/test.md
+
+  - J-Class CMMC Accessor App:
+      - Introduction: Accessor-app/introduction.md
+      - Overview: Accessor-app/overview.md
+      - Working Mechanism: Accessor-app/working.md
+      - Helpful Links: Accessor-app/links.md
+
+  - J-Class CMMC Accessor App:
+      - Fortinet Listener: App-integrators/fortinet.md
+      - Windows Listener: App-integrators/windows.md
+      - Linux Listener: App-integrators/linux.md
+      - Gsuite Listener: App-integrators/gsuite.md
+
+
+
+  # - J-Class CMMC Accessor App: 
+  #     - Introduction: Accessor-app/introduction.md
+  #     - Overview: Accessor-app/overview.md
+  #     - Working Mechanism: Accessor-app/working.md
+  #     - Helpful Links: Accessor-app/links.md
+
+  # - J-Class CMMC App Integrators:
+  #     - Fortinet Listener:
+  #     - Windows Listener:
+  #     - Linux Listener:
+  #     - Gsuite Listener:
+
+
+
+theme:
+  name: material
+  custom_dir: overrides
+  palette:
+    primary: aqua
+  favicon: "img/jclass-logo.png"
+  icon:
+    logo: "img/jclass-logo.png"
+extra_css:
+  - style/custom.css
+docs_dir: content
+site_dir: docs

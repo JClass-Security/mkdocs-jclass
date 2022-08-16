@@ -28,7 +28,7 @@ nav:
       - Working Mechanism: Accessor-app/working.md
       - Helpful Links: Accessor-app/links.md
 
-  - J-Class CMMC Accessor App:
+  - J-Class CMMC App Integrators:
       - Fortinet Listener: App-integrators/fortinet.md
       - Windows Listener: App-integrators/windows.md
       - Linux Listener: App-integrators/linux.md

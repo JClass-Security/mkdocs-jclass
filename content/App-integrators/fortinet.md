@@ -63,3 +63,110 @@ public class Main {
 
 **ServerListener**
 Java Datagram socket class represents a connectionless socket for sending and receiving datagram packets. It is a mechanism for transferring datagram packages over a network.
+
+DatagramSocket, boolean and byte[ ] object declare as a member variable in ServerListener class.
+
+* DatagramSocket: It creates a datagram socket and binds it with the available Port Number on the localhost machine.
+
+* Boolean: It checks the states of thread.
+
+* Byte[ ]: It retrieves data buffer from socket listeners.
+
+```
+   public ServerListener(Integer port) {
+       try {
+           socket = new DatagramSocket(514);
+       } catch (SocketException e) {          
+           e.printStackTrace();
+       }
+   }
+```
+
+ServerListener class is a Java class that extends a thread class accepting port number as a constructor parameter. Inside the constructor, it creates a new Datagram socket object which listens to port 514.
+
+```
+   public void run() {
+      
+       running = true;
+
+       while (running) {          
+           DatagramPacket packet = new DatagramPacket(buf, buf.length);           
+           try {
+               socket.receive(packet);
+           } catch (IOException e) {              
+               e.printStackTrace();
+           }
+                      
+           InetAddress address = packet.getAddress();          
+           int port = packet.getPort();
+           packet = new DatagramPacket(buf, buf.length, address, port);
+           String received = new String(packet.getData(), 0, packet.getLength());
+          
+           System.out.println(received);
+          
+           if (received.equals("end")) {
+               running = false;
+               continue;
+           }
+       }
+       socket.close();
+   }
+}
+```
+
+**Run** 
+Run function executes the severListener class in a separate thread which listens to the port number 514 for Fortinet syslog.
+
+**While**
+While the function continuously runs until the boolean (running) variable becomes false. Inside the while function, a DatagramPacket object is created passing buffer and buffer length as parameters. 
+Now, the DatagramPacket is ready to receive logs from Fortinet.
+
+**Try Catch Block**
+Inside the Try Catch block, a packet object is received from DatagramSocket. From the DatagramPacket object (packet) address and port is retrieved. These are passed along with buf and buf.length as parameters for initialized packet objects. Now, the packet is converted to a new string object to retrieve the data in readable format.
+
+When Fortinet syslog sends the string “end” to the Java listener then the thread stops and the connection closes.
+
+**Compiled Java File**
+
+```
+public class ServerListener extends Thread {
+   private DatagramSocket socket;
+   private boolean running;
+   private byte[] buf = new byte[256];
+
+   public ServerListener(Integer port) {
+       try {
+           socket = new DatagramSocket(514);
+       } catch (SocketException e) {          
+           e.printStackTrace();
+       }
+   }
+
+   public void run() {
+      
+       running = true;
+
+       while (running) {          
+           DatagramPacket packet = new DatagramPacket(buf, buf.length);           
+           try {
+               socket.receive(packet);
+           } catch (IOException e) {              
+               e.printStackTrace();
+           }
+                      
+           InetAddress address = packet.getAddress();          
+           int port = packet.getPort();
+           packet = new DatagramPacket(buf, buf.length, address, port);
+           String received = new String(packet.getData(), 0, packet.getLength());
+          
+           System.out.println(received);
+          
+           if (received.equals("end")) {
+               running = false;
+               continue;
+           }
+       }
+       socket.close();
+   }
+}
+```

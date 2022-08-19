@@ -16,7 +16,10 @@ Employ replay-resistant authentication mechanisms for network access to privileg
 
 #### Description
 
-Prevent reuse of identifiers for a defined period.
+**Prevent reuse of identifiers for a defined period.**
+
+Preventing reuse of identifiers suggests forestalling the task of recently utilized individual, gathering, job, or gadget identifiers to various people, gatherings, jobs, or gadgets. Identifiers extraordinarily partner a client ID to an individual, gathering, job, or gadget.
+
 
 ## 5.4 IA.L2-3.5.6
 

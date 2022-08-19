@@ -1,4 +1,4 @@
-# **Linux Listener**
+# **Rsyslog Linux Listener**
 
 **Firewall/Linux = Java Port Listener**
 ## Part 1: Configure the FortiGate firewall settings for your specific FortiOS operating system.

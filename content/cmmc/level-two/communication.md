@@ -16,6 +16,7 @@ Separate user functionality from system management functionality.
 
 #### Description
 
+
 Prevent unauthorized and unintended information transfer via shared system resources.
 
 ## 13.4 SC.L2-3.13.6

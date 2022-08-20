@@ -27,7 +27,9 @@ Processes for overseeing design changes to the system incorporate Configuration 
 
 #### Description
 
-Analyze the security impact of changes prior to implementation.
+**Analyze the security impact of changes prior to implementation.**
+
+An organization works with personnel with data security obligations (e.g., system administrator, framework security officials, framework security directors, and frameworks security engineers) lead security influence examinations
 
 ## 4.5 CM.L2-3.4.5
 

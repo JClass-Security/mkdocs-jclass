@@ -19,7 +19,9 @@ Configuration settings are the set of parameters that can be changed in hardware
 
 #### Description
 
-Track, review, approve or disapprove, and log changes to organizational systems. 
+**Track, review, approve or disapprove, and log changes to organizational systems.**
+
+Processes for overseeing design changes to the system incorporate Configuration Control Boards or Change Advisory Boards that survey and support proposed changes to System.
 
 ## 4.4 CM.L2-3.4.4
 

@@ -5,11 +5,15 @@
 
 #### Description
 
+**Control the flow of CUI in accordance with approved authorizations.** 
+
 Control the flow of CUI in accordance with approved authorizations. Control the progression of CUI as per supported approvals. Conversation: Information stream control directs where data can go inside a framework and between frameworks (versus who can get to the data) and without unequivocal respect to ensuing.
 
 ## 1.2 AC.L2-3.1.4 
 
 #### Description
+
+**Separate the duties of individuals to reduce the risk of malevolent activity without collusion.**
 
 Separate the duties of individuals to reduce the risk of malevolent activity without collusion. 
 Separate the obligations of people to diminish the gamble of noxious action without plot". In layman's terms, associations should isolate the obligations and errands that workers complete to limit the opportunity that they could deliberately design and execute malevolent exercises.

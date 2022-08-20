@@ -141,7 +141,6 @@ Utilize a blend of validation and encryption strategies to safeguard the admitta
 **Control connection of mobile devices.**
 
 A cell phone is a processing gadget that has a little structure variable to such an extent that it can undoubtedly be conveyed by a solitary individual; is intended to work without an actual association (e.g., remotely communicate or get data)
-
 ## 1.17 AC.L2-3.1.19 
 
 #### Description

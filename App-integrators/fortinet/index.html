@@ -1,0 +1,1085 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../img/jclass-logo.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>Fortinet Listener - J-Class Solutions</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+          
+          
+          <meta name="theme-color" content="">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../style/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="aqua" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#rsyslog-fortinet-listener" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="J-Class Solutions" class="md-header__button md-logo" aria-label="J-Class Solutions" data-md-component="logo">
+      
+  
+  
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            J-Class Solutions
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Fortinet Listener
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="J-Class Solutions" class="md-nav__button md-logo" aria-label="J-Class Solutions" data-md-component="logo">
+      
+  
+  
+
+    </a>
+    J-Class Solutions
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          CMMC Levels
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="CMMC Levels" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          CMMC Levels
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmmc-level-one/level-one/" class="md-nav__link">
+        CMMC Level 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          CMMC Level 2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="CMMC Level 2" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          CMMC Level 2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmmc/level-two/2-level/" class="md-nav__link">
+        Introduction to Level 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmmc/level-two/access/" class="md-nav__link">
+        Access Control
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmmc/level-two/audit/" class="md-nav__link">
+        Audit and Accountability
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmmc/level-two/awareness/" class="md-nav__link">
+        Awarenesss and Control
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmmc/level-two/configuration/" class="md-nav__link">
+        Configuration Management
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmmc/level-two/identity/" class="md-nav__link">
+        Identity and Authentication
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmmc/level-two/incident/" class="md-nav__link">
+        Incident Response
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmmc/level-two/maintenance/" class="md-nav__link">
+        Maintenance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmmc/level-two/media/" class="md-nav__link">
+        Media Protection
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmmc/level-two/personnel/" class="md-nav__link">
+        Personnel Security
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmmc/level-two/physical/" class="md-nav__link">
+        Physical Protection
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmmc/level-two/risk/" class="md-nav__link">
+        Risk Assessment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmmc/level-two/security/" class="md-nav__link">
+        Security Assessment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmmc/level-two/communication/" class="md-nav__link">
+        System and Communication Protection
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmmc/level-two/information/" class="md-nav__link">
+        System and Information Integrity
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmmc-level-three/test/" class="md-nav__link">
+        CMMC Level 3
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          J-Class CMMC Accessor App
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="J-Class CMMC Accessor App" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          J-Class CMMC Accessor App
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Accessor-app/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Accessor-app/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Accessor-app/working/" class="md-nav__link">
+        Working Mechanism
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Accessor-app/links/" class="md-nav__link">
+        Helpful Links
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          J-Class CMMC App Integrators
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="J-Class CMMC App Integrators" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          J-Class CMMC App Integrators
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Fortinet Listener
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Fortinet Listener
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#firewalllinux-java-port-listener" class="md-nav__link">
+    Firewall/Linux = Java Port Listener
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-configure-the-fortigate-firewall-settings-for-your-specific-fortios-operating-system" class="md-nav__link">
+    Part 1: Configure the FortiGate firewall settings for your specific FortiOS operating system.
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: Configure the FortiGate firewall settings for your specific FortiOS operating system.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#firewalls-running-fortios-4x" class="md-nav__link">
+    Firewalls running FortiOS 4.x
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#firewalls-running-fortios-5x-or-fortios-6x" class="md-nav__link">
+    Firewalls running FortiOS 5.x or FortiOS 6.x
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-fortinet-java-listener" class="md-nav__link">
+    Part 2: Fortinet Java Listener
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../windows/" class="md-nav__link">
+        Windows Listener
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux/" class="md-nav__link">
+        Linux Listener
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gsuite/" class="md-nav__link">
+        Gsuite Listener
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#firewalllinux-java-port-listener" class="md-nav__link">
+    Firewall/Linux = Java Port Listener
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-configure-the-fortigate-firewall-settings-for-your-specific-fortios-operating-system" class="md-nav__link">
+    Part 1: Configure the FortiGate firewall settings for your specific FortiOS operating system.
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: Configure the FortiGate firewall settings for your specific FortiOS operating system.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#firewalls-running-fortios-4x" class="md-nav__link">
+    Firewalls running FortiOS 4.x
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#firewalls-running-fortios-5x-or-fortios-6x" class="md-nav__link">
+    Firewalls running FortiOS 5.x or FortiOS 6.x
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-fortinet-java-listener" class="md-nav__link">
+    Part 2: Fortinet Java Listener
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="rsyslog-fortinet-listener"><strong>Rsyslog Fortinet Listener</strong><a class="headerlink" href="#rsyslog-fortinet-listener" title="Permanent link">&para;</a></h1>
+<h2 id="firewalllinux-java-port-listener">Firewall/Linux = Java Port Listener<a class="headerlink" href="#firewalllinux-java-port-listener" title="Permanent link">&para;</a></h2>
+<h2 id="part-1-configure-the-fortigate-firewall-settings-for-your-specific-fortios-operating-system">Part 1: Configure the FortiGate firewall settings for your specific FortiOS operating system.<a class="headerlink" href="#part-1-configure-the-fortigate-firewall-settings-for-your-specific-fortios-operating-system" title="Permanent link">&para;</a></h2>
+<h3 id="firewalls-running-fortios-4x">Firewalls running FortiOS 4.x<a class="headerlink" href="#firewalls-running-fortios-4x" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Open the FortiGate Management Console.</li>
+<li>Now, navigate to Log &amp; Report &gt; Log Config &gt; Log Settings. </li>
+<li>Select the Syslog check box.</li>
+<li>
+<p>Expand the Options section and complete all fields. </p>
+<ul>
+<li>In the Name/IP field, enter the IP address of the JclassAgent Syslog Server.</li>
+<li>In the Port field, enter 514.</li>
+<li>
+<p>In the Level field, select the logging level where FortiGate should generate log messages.</p>
+<p>We recommend Level 6 - Information. </p>
+</li>
+<li>
+<p>In the Facility field, enter a specific syslog facility for the JclassAgent syslog server or use the default.</p>
+</li>
+<li>Make sure Enable CSV Format is unchecked.  </li>
+<li>Click Apply.</li>
+</ul>
+</li>
+</ol>
+<h3 id="firewalls-running-fortios-5x-or-fortios-6x">Firewalls running FortiOS 5.x or FortiOS 6.x<a class="headerlink" href="#firewalls-running-fortios-5x-or-fortios-6x" title="Permanent link">&para;</a></h3>
+<p>In FortiOS 5.x and higher, syslog servers should be configured using a command line.
+FortiOS allows up to 3 syslog servers on FortiOS 5.x and 4 syslog servers on ForiOS 6.x.</p>
+<ul>
+<li>syslogd </li>
+<li>syslogd2</li>
+<li>syslogd3</li>
+<li>
+<p>syslogd4</p>
+</li>
+<li>
+<p>To configure your firewall running FortiOS 5.x or 6.x, open a command line on the device.</p>
+</li>
+<li>Before configuring one of the available syslog servers, find the first one that is not already in use by the following command:</li>
+</ul>
+<pre><code>config log {syslogd | syslogd2 | syslogd3 | syslogd4} setting
+show
+end
+</code></pre>
+<ol>
+<li>Enter the following commands to configure the chosen syslog server entry {syslogd|syslogd2|syslogd3|syslogd4} in the example below we are using syslogd and our JclassAgent syslog IP address is 192.168.3.15.</li>
+</ol>
+<pre><code>config global
+config log syslogd setting 
+set status enable
+set csv disable
+set server 192.168.3.15
+set source-ip 10.2.2.2
+end
+</code></pre>
+<p>For the server parameter, enter the IP address of the JclassAgent syslog server.
+For the source-ip, enter the IP address of the firewall that will be sending the syslog messages to the JclassAgent syslog server.</p>
+<h2 id="part-2-fortinet-java-listener">Part 2: Fortinet Java Listener<a class="headerlink" href="#part-2-fortinet-java-listener" title="Permanent link">&para;</a></h2>
+<p><strong>Main function</strong>
+Main function creates a new server listener thread object with port: 514.</p>
+<pre><code>public class Main {
+
+   public static void main(String[] args) {
+       //514 is a port no             
+       new ServerListener(514).start();;
+   }
+}
+</code></pre>
+<p><strong>ServerListener</strong>
+Java Datagram socket class represents a connectionless socket for sending and receiving datagram packets. It is a mechanism for transferring datagram packages over a network.</p>
+<p>DatagramSocket, boolean and byte[ ] object declare as a member variable in ServerListener class.</p>
+<ul>
+<li>
+<p>DatagramSocket: It creates a datagram socket and binds it with the available Port Number on the localhost machine.</p>
+</li>
+<li>
+<p>Boolean: It checks the states of thread.</p>
+</li>
+<li>
+<p>Byte[ ]: It retrieves data buffer from socket listeners.</p>
+</li>
+</ul>
+<pre><code>   public ServerListener(Integer port) {
+       try {
+           socket = new DatagramSocket(514);
+       } catch (SocketException e) {          
+           e.printStackTrace();
+       }
+   }
+</code></pre>
+<p>ServerListener class is a Java class that extends a thread class accepting port number as a constructor parameter. Inside the constructor, it creates a new Datagram socket object which listens to port 514.</p>
+<pre><code>   public void run() {
+
+       running = true;
+
+       while (running) {          
+           DatagramPacket packet = new DatagramPacket(buf, buf.length);           
+           try {
+               socket.receive(packet);
+           } catch (IOException e) {              
+               e.printStackTrace();
+           }
+
+           InetAddress address = packet.getAddress();          
+           int port = packet.getPort();
+           packet = new DatagramPacket(buf, buf.length, address, port);
+           String received = new String(packet.getData(), 0, packet.getLength());
+
+           System.out.println(received);
+
+           if (received.equals(&quot;end&quot;)) {
+               running = false;
+               continue;
+           }
+       }
+       socket.close();
+   }
+}
+</code></pre>
+<p><strong>Run</strong> 
+Run function executes the severListener class in a separate thread which listens to the port number 514 for Fortinet syslog.</p>
+<p><strong>While</strong>
+While the function continuously runs until the boolean (running) variable becomes false. Inside the while function, a DatagramPacket object is created passing buffer and buffer length as parameters. 
+Now, the DatagramPacket is ready to receive logs from Fortinet.</p>
+<p><strong>Try Catch Block</strong>
+Inside the Try Catch block, a packet object is received from DatagramSocket. From the DatagramPacket object (packet) address and port is retrieved. These are passed along with buf and buf.length as parameters for initialized packet objects. Now, the packet is converted to a new string object to retrieve the data in readable format.</p>
+<p>When Fortinet syslog sends the string “end” to the Java listener then the thread stops and the connection closes.</p>
+<p><strong>Compiled Java File</strong></p>
+<pre><code>public class ServerListener extends Thread {
+   private DatagramSocket socket;
+   private boolean running;
+   private byte[] buf = new byte[256];
+
+   public ServerListener(Integer port) {
+       try {
+           socket = new DatagramSocket(514);
+       } catch (SocketException e) {          
+           e.printStackTrace();
+       }
+   }
+
+   public void run() {
+
+       running = true;
+
+       while (running) {          
+           DatagramPacket packet = new DatagramPacket(buf, buf.length);           
+           try {
+               socket.receive(packet);
+           } catch (IOException e) {              
+               e.printStackTrace();
+           }
+
+           InetAddress address = packet.getAddress();          
+           int port = packet.getPort();
+           packet = new DatagramPacket(buf, buf.length, address, port);
+           String received = new String(packet.getData(), 0, packet.getLength());
+
+           System.out.println(received);
+
+           if (received.equals(&quot;end&quot;)) {
+               running = false;
+               continue;
+           }
+       }
+       socket.close();
+   }
+}
+</code></pre>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../../Accessor-app/links/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Helpful Links" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Helpful Links
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../windows/" class="md-footer__link md-footer__link--next" aria-label="Next: Windows Listener" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Windows Listener
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 J-class Solutions
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+    
+  </body>
+</html>
